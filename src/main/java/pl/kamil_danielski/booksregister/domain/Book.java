@@ -3,7 +3,7 @@ package pl.kamil_danielski.booksregister.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
+
 
 @Data
 @Entity

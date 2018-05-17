@@ -1,6 +1,9 @@
 language: java
-
-script: "mvn cobertura:cobertura"
+sudo: false # faster builds
 
 after_success:
-  - bash <(curl -s https://codecov.io/gh/adso54/books-register) -t 76c8c1e7-5878-4f9b-8c8a-56b7c33ea8a2
+- bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+    - CODECOV_TOKEN=:76c8c1e7-5878-4f9b-8c8a-56b7c33ea8a2

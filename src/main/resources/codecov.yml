@@ -1,4 +1,5 @@
 codecov:
+  token: 76c8c1e7-5878-4f9b-8c8a-56b7c33ea8a2
   notify:
     require_ci_to_pass: yes
 
@@ -24,3 +25,4 @@ comment:
   layout: "header, diff"
   behavior: default
   require_changes: no
+

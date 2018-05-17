@@ -8,6 +8,6 @@ public interface AuthorService {
 
     Set<Author> getAuthors();
 
-    Author findById();
+    Author findById(Long id);
 
 }

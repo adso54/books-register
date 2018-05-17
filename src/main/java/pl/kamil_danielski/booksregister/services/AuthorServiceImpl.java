@@ -12,17 +12,21 @@ public class AuthorServiceImpl implements AuthorService {
 
     private AuthorRepository authorRepository;
 
+
     public AuthorServiceImpl(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
 
     @Override
     public Set<Author> getAuthors() {
-        return null;
+        Set<Author> authors = new HashSet<>();
+
+        authorRepository.findAll().iterator().forEachRemaining(authors::add);
+        return authors;
     }
 
     @Override
-    public Author findById() {
-        return null;
+    public Author findById(Long id) {
+        return authorRepository.findById(id).get();
     }
 }

@@ -1,0 +1,1 @@
+[![CircleCI](https://circleci.com/gh/adso54/books-register.svg?style=svg)](https://circleci.com/gh/adso54/books-register)

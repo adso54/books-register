@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Getter
@@ -18,6 +20,22 @@ public class Book {
     private Long id;
     private String title;
 
+    @ManyToMany
+    @JoinTable(name = "book_author",
+        joinColumns = @JoinColumn(name = "book_id"),
+        inverseJoinColumns = @JoinColumn(name = "author_id"))
+    private Set<Author> authors = new HashSet<>();
+
+    @Lob
+    private Byte[] image;
+
+    @Lob
+    private String description;
+
     @ManyToOne
-    private Author author;
+    private Publisher publisher;
+
+    public void addAuthor(Author author){
+        authors.add(author);
+    }
 }

@@ -24,12 +24,14 @@ public class BookTest {
     @Test
     public void testGettersAndSetters(){
        book.setId(ID);
-       book.setAuthor(author);
+       book.addAuthor(author);
        book.setTitle(TITLE);
+       book.setDescription(DESCRIPTION);
 
        assertEquals(book.getId(), ID);
-       assertEquals(book.getAuthor(), author);
+       assertEquals(book.getAuthors().iterator().next(), author);
        assertEquals(book.getTitle(), TITLE);
+       assertEquals(book.getDescription(), DESCRIPTION);
 
     }
 }

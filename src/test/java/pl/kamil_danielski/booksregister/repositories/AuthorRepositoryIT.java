@@ -1,6 +1,5 @@
 package pl.kamil_danielski.booksregister.repositories;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,25 +15,23 @@ import static org.junit.Assert.*;
 @DataJpaTest
 public class AuthorRepositoryIT {
 
+    public static final String STANISŁAW = "Stanisław";
+    public static final String LEM = "Lem";
     @Autowired
     private AuthorRepository authorRepository;
 
     Optional<Author> authorOptional;
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void findByLastName() {
-        authorOptional = authorRepository.findByLastName("Lem");
-        assertEquals("Lem", authorOptional.get().getLastName());
+        authorOptional = authorRepository.findByLastName(LEM);
+        assertEquals(LEM, authorOptional.get().getLastName());
     }
 
     @Test
     public void findByFirstName() {
-        authorOptional = authorRepository.findByFirstName("Stanisław");
-        assertEquals("Stanisław", authorOptional.get().getFirstName());
+        authorOptional = authorRepository.findByFirstName(STANISŁAW);
+        assertEquals(STANISŁAW, authorOptional.get().getFirstName());
     }
 
 }

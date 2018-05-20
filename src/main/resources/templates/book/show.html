@@ -131,14 +131,24 @@
                     <div class="panel-heading">
                         <h1 th:text="${book.title}" class="panel-title">Book title</h1>
                     </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Authors</h3>
+                    </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                    <p><strong>Author:</strong></p>
-                                    <p th:text="${book.author.firstName}">First name</p>
-                                    <p th:text="${book.author.lastName}">Last name</p>
-                                    <strong>Book title</strong></p>
-                                    <p th:text="${book.title}">Book title</p>
+                                    <div class="table-responsive" th:if="${not #lists.isEmpty(book.authors)}">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th>First name</th>
+                                                <th>Last name</th>
+                                            </tr>
+                                            <tr th:each="author : ${book.authors}">
+                                                <td th:text="${author.firstName}">Stephen</td>
+                                                <td th:text="${author.lastName}">King</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                             </div>
                         </div>
                     </div>
